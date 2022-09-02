@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+  </head>
+  <body style="background-color: rgba(128, 128, 128, 0.5)">
+    <center><h1>Notes</h1></center>
+    <div>
+      <% if(notes.length > 0) { %> <% notes.forEach(note => { %>
+      <div
+        style="
+          border: 2px solid rgb(145, 75, 10);
+          margin-bottom: 20px;
+          background-color: rgba(145, 75, 10, 0.3);
+          border-radius: 5px;
+          padding: 10px;
+        "
+      >
+        <center><h3><%= note.title %></h3></center>
+        <p style="text-align: start"><%= note.desc %></p>
+        <p style="text-align: end"><b>Date:</b><%= note.date %></p>
+      </div>
+      <% }) %> <% } else { %>
+      <center><h3>You have no Note yet</h3></center>
+      <% } %>
+    </div>
+    <div style="display: flex; justify-content: flex-end">
+      <a
+        href="/addNote"
+        style="
+          text-decoration: none;
+          border: 2px solid white;
+          background-color: blue;
+          color: black;
+          border-radius: 5px;
+          padding: 10px;
+        "
+        >Add Note</a
+      >
+    </div>
+  </body>
+</html>
